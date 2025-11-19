@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { FiMail, FiMapPin, FiSend } from 'react-icons/fi'
+import emailjs from 'emailjs-com'
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -15,22 +16,24 @@ const Contact = () => {
     setStatus('sending')
 
     try {
-      const response = await fetch('http://localhost:5000/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
+      // Using EmailJS for direct email sending (no backend needed)
+      await emailjs.send(
+        'service_9rcy6cl',  // Replace with your EmailJS service ID
+        'template_1p0hi6e', // Replace with your EmailJS template ID
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+          to_email: 'naeemnaikwadi32@gmail.com'
         },
-        body: JSON.stringify(formData),
-      })
+        'yH1wQOIUVkp1EXUUb'  // Replace with your EmailJS public key
+      )
 
-      if (response.ok) {
-        setStatus('success')
-        setFormData({ name: '', email: '', message: '' })
-        setTimeout(() => setStatus(''), 3000)
-      } else {
-        setStatus('error')
-      }
+      setStatus('success')
+      setFormData({ name: '', email: '', message: '' })
+      setTimeout(() => setStatus(''), 3000)
     } catch (error) {
+      console.error('Email error:', error)
       setStatus('error')
     }
   }
