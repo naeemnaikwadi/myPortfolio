@@ -1,0 +1,21 @@
+{
+  "name": "naeem-portfolio",
+  "version": "1.0.0",
+  "description": "Professional developer portfolio for Naeem Anjum Naikwadi",
+  "scripts": {
+    "install:all": "cd client && npm install && cd ../server && npm install",
+    "dev:client": "cd client && npm run dev",
+    "dev:server": "cd server && npm run dev",
+    "build:client": "cd client && npm run build",
+    "preview:client": "cd client && npm run preview"
+  },
+  "keywords": [
+    "portfolio",
+    "react",
+    "tailwind",
+    "nodejs",
+    "developer"
+  ],
+  "author": "Naeem Anjum Naikwadi",
+  "license": "MIT"
+}
