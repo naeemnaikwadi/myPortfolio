@@ -4,7 +4,7 @@
 
 ![React](https://img.shields.io/badge/React-18.3-blue?logo=react)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4-38bdf8?logo=tailwindcss)
-![Node.js](https://img.shields.io/badge/Node.js-18+-green?logo=node.js)
+![EmailJS](https://img.shields.io/badge/EmailJS-4.3-orange?logo=gmail)
 ![License](https://img.shields.io/badge/License-MIT-yellow)
 
 ## ✨ Features
@@ -34,19 +34,16 @@ start-dev.bat
 ### Option 2: Manual Setup
 
 ```bash
-# Install all dependencies
-npm run install:all
+# Install dependencies
+npm install
 
-# Terminal 1 - Frontend
-cd client
-npm run dev
-
-# Terminal 2 - Backend
-cd server
+# Start development server
 npm run dev
 ```
 
 Visit: **http://localhost:5173**
+
+**Note**: No backend needed! Contact form uses EmailJS.
 
 ## 📚 Documentation
 
@@ -64,11 +61,7 @@ Visit: **http://localhost:5173**
 - **Tailwind CSS** - Styling
 - **Framer Motion** - Animations
 - **React Icons** - Icons
-
-### Backend
-- **Node.js** - Runtime
-- **Express** - Web framework
-- **Nodemailer** - Email service
+- **EmailJS** - Contact form (no backend needed!)
 
 ## 📁 Project Structure
 

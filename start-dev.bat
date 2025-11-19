@@ -1,20 +1,20 @@
 @echo off
 echo ========================================
-echo Starting Portfolio Development Servers
+echo Starting Portfolio Development Server
 echo ========================================
 echo.
-echo Frontend: http://localhost:5173
-echo Backend:  http://localhost:5000
+echo Opening: http://localhost:5173
 echo.
-echo Press Ctrl+C to stop servers
+echo Press Ctrl+C in the new window to stop
 echo ========================================
 echo.
 
-start "Portfolio Frontend" cmd /k "cd client && npm run dev"
-start "Portfolio Backend" cmd /k "cd server && npm run dev"
+start "Portfolio Dev Server" cmd /k "cd client && npm run dev"
 
 echo.
-echo Servers started in separate windows!
-echo Close those windows to stop the servers.
+echo Development server started!
+echo Close the new window to stop the server.
+echo.
+echo Note: Your portfolio uses EmailJS - No backend needed!
 echo.
 pause

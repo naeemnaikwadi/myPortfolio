@@ -1,7 +1,6 @@
 # Dependencies
 node_modules/
 client/node_modules/
-server/node_modules/
 
 # Build outputs
 client/dist/
@@ -11,7 +10,6 @@ client/build/
 .env
 .env.local
 .env.production
-server/.env
 
 # Logs
 *.log
@@ -29,3 +27,6 @@ Thumbs.db
 
 # Misc
 .cache/
+
+# Server folder (not needed - using EmailJS)
+server/
