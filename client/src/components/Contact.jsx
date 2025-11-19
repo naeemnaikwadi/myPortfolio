@@ -1,9 +1,10 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import { motion } from 'framer-motion'
 import { FiMail, FiMapPin, FiSend } from 'react-icons/fi'
-import emailjs from 'emailjs-com'
+import emailjs from '@emailjs/browser'
 
 const Contact = () => {
+  const formRef = useRef()
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -11,31 +12,28 @@ const Contact = () => {
   })
   const [status, setStatus] = useState('')
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault()
     setStatus('sending')
 
-    try {
-      // Using EmailJS for direct email sending (no backend needed)
-      await emailjs.send(
-        'service_9rcy6cl',  // Replace with your EmailJS service ID
-        'template_1p0hi6e', // Replace with your EmailJS template ID
-        {
-          from_name: formData.name,
-          from_email: formData.email,
-          message: formData.message,
-          to_email: 'naeemnaikwadi32@gmail.com'
-        },
-        'yH1wQOIUVkp1EXUUb'  // Replace with your EmailJS public key
-      )
-
+    // Send email using EmailJS with form reference
+    emailjs.sendForm(
+      'service_9rcy6cl',
+      'template_1p0hi6e',
+      formRef.current,
+      'yH1wQOIUVkp1EXUUb'
+    )
+    .then((result) => {
+      console.log('Email sent successfully:', result.text)
       setStatus('success')
       setFormData({ name: '', email: '', message: '' })
       setTimeout(() => setStatus(''), 3000)
-    } catch (error) {
+    })
+    .catch((error) => {
       console.error('Email error:', error)
       setStatus('error')
-    }
+      setTimeout(() => setStatus(''), 3000)
+    })
   }
 
   const handleChange = (e) => {
@@ -112,7 +110,7 @@ const Contact = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <form onSubmit={handleSubmit} className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg">
+            <form ref={formRef} onSubmit={handleSubmit} className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg">
               <div className="mb-6">
                 <label htmlFor="name" className="block text-sm font-medium mb-2">
                   Name
@@ -120,7 +118,7 @@ const Contact = () => {
                 <input
                   type="text"
                   id="name"
-                  name="name"
+                  name="from_name"
                   value={formData.name}
                   onChange={handleChange}
                   required
@@ -136,7 +134,7 @@ const Contact = () => {
                 <input
                   type="email"
                   id="email"
-                  name="email"
+                  name="from_email"
                   value={formData.email}
                   onChange={handleChange}
                   required
