@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { FiMail, FiMapPin, FiSend } from 'react-icons/fi'
 import emailjs from '@emailjs/browser'
@@ -12,6 +12,11 @@ const Contact = () => {
   })
   const [status, setStatus] = useState('')
 
+  // Initialize EmailJS
+  useEffect(() => {
+    emailjs.init('yH1wQOIUVkp1EXUUb')
+  }, [])
+
   const handleSubmit = (e) => {
     e.preventDefault()
     setStatus('sending')
@@ -20,8 +25,7 @@ const Contact = () => {
     emailjs.sendForm(
       'service_9rcy6cl',
       'template_1p0hi6e',
-      formRef.current,
-      'yH1wQOIUVkp1EXUUb'
+      formRef.current
     )
     .then((result) => {
       console.log('Email sent successfully:', result.text)
