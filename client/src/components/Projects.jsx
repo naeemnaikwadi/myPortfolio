@@ -3,14 +3,7 @@ import { FiGithub, FiExternalLink } from 'react-icons/fi'
 
 const Projects = () => {
   const projects = [
-    {
-      title: 'GrowSkill.edu',
-      description: 'Offline-first learning PWA with AI progress analysis & doubt solving. Features student app, teacher dashboard, and admin portal.',
-      tech: ['React.js', 'Node.js', 'MongoDB', 'IndexedDB', 'AI Models', 'RAG'],
-      image: '/projects/growskill.jpg',
-      github: 'https://github.com/naeemnaikwadi/GrowSkill-offline-',
-      // demo: 'None'
-    },
+ 
     {
       title: 'SkillSync',
       description: 'ERP-based student management system with authentication, AI chatbot & role-based access control for efficient administration.',
@@ -34,7 +27,15 @@ const Projects = () => {
       image: '/projects/icam.jpg',
       github: 'https://github.com/sgavankar43/iCAM',
       demo: 'https://github.com/sgavankar43/iCAM/releases/download/v1.0.0/iCAM.apk'
-    }
+    },
+   {
+      title: 'GrowSkill.edu',
+      description: 'Offline-first learning PWA with AI progress analysis & doubt solving. Features student app, teacher dashboard, and admin portal.',
+      tech: ['React.js', 'Node.js', 'MongoDB', 'IndexedDB', 'AI Models', 'RAG'],
+      image: '/projects/growskill.jpg',
+      github: 'https://github.com/naeemnaikwadi/GrowSkill',
+      // demo: 'None'
+    },
   ]
 
   return (
