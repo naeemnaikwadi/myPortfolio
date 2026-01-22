@@ -57,7 +57,7 @@ const About = () => {
               I strive to create impactful solutions that make a difference in people's lives.
             </p>
             <a
-              href="/resume.pdf"
+              href="/Naeem_Naikwadi_resume.pdf"
               download
               className="inline-block px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white rounded-lg font-medium transition-colors"
             >
