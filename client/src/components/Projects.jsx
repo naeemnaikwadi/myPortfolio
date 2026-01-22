@@ -9,7 +9,7 @@ const Projects = () => {
       tech: ['React.js', 'Node.js', 'MongoDB', 'IndexedDB', 'AI Models', 'RAG'],
       image: '/projects/growskill.jpg',
       github: 'https://github.com/naeemnaikwadi/GrowSkill-offline-',
-      demo: 'https://growskill.edu'
+      // demo: 'None'
     },
     {
       title: 'SkillSync',
@@ -17,15 +17,15 @@ const Projects = () => {
       tech: ['MERN Stack', 'Gemini AI', 'JWT', 'RBAC'],
       image: '/projects/skillsync.jpg',
       github: 'https://github.com/naeemnaikwadi/erpfull',
-      demo: 'https://skillsync.demo'
+      demo: 'https://modernerp-bay.vercel.app/'
     },
     {
-      title: 'REVCORP',
-      description: 'Anonymous employee review platform with secure role-based system for honest workplace feedback.',
+      title: 'EduVerse',
+      description: 'Smart learning dashboard for students and teachers.',
       tech: ['HTML', 'CSS', 'JavaScript', 'MongoDB Atlas'],
-      image: '/projects/revcorp.jpg',
-      github: 'https://github.com/naeemnaikwadi/revcorp',
-      demo: 'https://revcorp.demo'
+      image: '/projects/eduverse.jpg',
+      github: 'https://github.com/naeemnaikwadi/EduVerse',
+      demo: 'https://eduverse-liard.vercel.app/'
     },
     {
       title: 'iCam',
@@ -33,7 +33,7 @@ const Projects = () => {
       tech: ['Python', 'OpenCV', 'TensorFlow', 'TTS'],
       image: '/projects/icam.jpg',
       github: 'https://github.com/sgavankar43/iCAM',
-      demo: null
+      demo: 'https://github.com/sgavankar43/iCAM/releases/download/v1.0.0/iCAM.apk'
     }
   ]
 
